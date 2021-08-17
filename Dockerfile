@@ -1,4 +1,4 @@
-FROM python:3.6-slim
+FROM python:3.6-buster
 
 EXPOSE 8080
 
@@ -35,8 +35,6 @@ WORKDIR /var/theia/
 RUN if [ $workspace = "theia" ] ; then \
 	wget https://codejudge-starter-repo-artifacts.s3.ap-south-1.amazonaws.com/theia/run.sh \
     && chmod 775 ./run.sh ; fi
-
-# Install chrome and chromedriver
 
 # Install chrome and chromedriver
 RUN wget https://codejudge-starter-repo-artifacts.s3.ap-south-1.amazonaws.com/backend-project/chrome/chrome-setup.sh
